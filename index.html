@@ -1,57 +1,44 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <style>
-    body {
-      font-family: sans-serif;
-      margin: 40px;
-    }
+<!--  ----------------------------------------------------------------------  -->
+<!--  NOTE: Please add the following <META> element to your page <HEAD>.      -->
+<!--  If necessary, please modify the charset parameter to specify the        -->
+<!--  character set of your HTML page.                                        -->
+<!--  ----------------------------------------------------------------------  -->
 
-    label {
-      display: inline-block;
-      width: 140px;
-      margin-top: 12px;
-    }
+<META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=UTF-8">
 
-    input[type="text"],
-    input[type="email"],
-    select,
-    textarea {
-      width: 300px;
-      padding: 6px;
-      margin-top: 8px;
-    }
+<!--  ----------------------------------------------------------------------  -->
+<!--  NOTE: Please add the following <FORM> element to your page.             -->
+<!--  ----------------------------------------------------------------------  -->
 
-    textarea {
-      height: 100px;
-      resize: vertical;
-    }
+<form action="https://foundationsoftware--05444960.sandbox.my.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8&orgId=00DU9000005Zfjl" method="POST">
 
-    input[type="submit"] {
-      margin-top: 20px;
-      padding: 10px 20px;
-    }
+<input type=hidden name="orgid" value="00DU9000005Zfjl">
+<input type=hidden name="retURL" value="http://google.com">
 
-    br {
-      line-height: 2;
-    }
-  </style>
-</head>
-<body>
+<!--  ----------------------------------------------------------------------  -->
+<!--  NOTE: These fields are optional debugging elements. Please uncomment    -->
+<!--  these lines if you wish to test in debug mode.                          -->
+<!--  <input type="hidden" name="debug" value=1>                              -->
+<!--  <input type="hidden" name="debugEmail"                                  -->
+<!--  value="amullen@foundationsoft.com">                                     -->
+<!--  ----------------------------------------------------------------------  -->
 
-  <form action="https://foundationsoftware--05444960.sandbox.my.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8&orgId=00DU9000005Zfjl" method="POST">
+<label for="name">Contact Name</label><input  id="name" maxlength="80" name="name" size="20" type="text" /><br>
 
-    <input type="hidden" name="orgid" value="00DU9000005Zfjl">
-    <input type="hidden" name="retURL" value="http://google.com">
-    <!-- <input type="hidden" name="debug" value="1"> -->
-    <!-- <input type="hidden" name="debugEmail" value="amullen@foundationsoft.com"> -->
+<label for="email">Email</label><input  id="email" maxlength="80" name="email" size="20" type="text" /><br>
 
-    <label for="name">Contact Name</label>
-    <input id="name" maxlength="80" name="name" type="text"><br>
+Company:<select  id="00N5f00000hYROt" name="00N5f00000hYROt" title="Company"><option value="">--None--</option><option value="AboutTime">AboutTime</option>
+<option value="Edge">Edge</option>
+<option value="Foundation">Foundation</option>
+<option value="Harness">Harness</option>
+<option value="McCormick">McCormick</option>
+<option value="WorkMax">WorkMax</option>
+</select><br>
 
-    <label for="email">Email</label>
-    <input id="email" maxlength="80" name="email" type="text"><br>
+<label for="subject">Subject</label><input  id="subject" maxlength="80" name="subject" size="20" type="text" /><br>
 
-    <label for="00N5f00000hYROt">Company</label>
-    <select id="00N5f00000hYROt"
+<label for="description">Description</label><textarea name="description"></textarea><br>
+
+<input type="submit" name="submit">
+
+</form>
