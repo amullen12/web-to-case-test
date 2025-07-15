@@ -2,138 +2,99 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Submit a Support Case</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web-to-Case Form</title>
   <style>
     body {
-      background: linear-gradient(to bottom, #eef2f3, #ffffff);
-      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0;
-      padding: 0;
-    }
-
-    .container {
-      max-width: 720px;
-      margin: 60px auto;
-      background: #fff;
-      padding: 40px;
-      border-radius: 12px;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-    }
-
-    h1 {
-      text-align: center;
-      color: #333;
-      margin-bottom: 30px;
+      font-family: sans-serif;
+      margin: 40px;
     }
 
     label {
-      display: block;
-      margin-top: 20px;
-      font-weight: 600;
-      color: #333;
+      display: inline-block;
+      width: 140px;
+      margin-top: 12px;
     }
 
     input[type="text"],
     input[type="email"],
     select,
     textarea {
-      width: 100%;
-      padding: 12px;
-      margin-top: 6px;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-      font-size: 15px;
-      box-sizing: border-box;
+      width: 300px;
+      padding: 6px;
+      margin-top: 8px;
     }
 
     textarea {
+      height: 100px;
       resize: vertical;
-      height: 120px;
     }
 
     input[type="submit"] {
-      margin-top: 30px;
-      width: 100%;
-      background-color: #007bff;
-      color: white;
-      border: none;
-      padding: 14px;
-      font-size: 16px;
-      border-radius: 6px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
+      margin-top: 20px;
+      padding: 10px 20px;
     }
 
-    input[type="submit"]:hover {
-      background-color: #0056b3;
-    }
-
-    @media (max-width: 600px) {
-      .container {
-        padding: 25px;
-        margin: 30px 15px;
-      }
+    br {
+      line-height: 2;
     }
   </style>
 </head>
 <body>
 
-<div class="container">
-  <h1>Submit a Support Case</h1>
   <form action="https://foundationsoftware--05444960.sandbox.my.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8&orgId=00DU9000005Zfjl" method="POST">
+
     <input type="hidden" name="orgid" value="00DU9000005Zfjl">
-    <input type="hidden" name="retURL" value="https://google.com">
+    <input type="hidden" name="retURL" value="http://google.com">
     <input type="hidden" name="status" value="New">
     <input type="hidden" name="origin" value="CONVERGE">
     <!-- <input type="hidden" name="debug" value="1"> -->
     <!-- <input type="hidden" name="debugEmail" value="amullen@foundationsoft.com"> -->
 
     <label for="name">Contact Name</label>
-    <input id="name" name="name" type="text" maxlength="80" required>
+    <input id="name" maxlength="80" name="name" type="text"><br>
 
     <label for="email">Email</label>
-    <input id="email" name="email" type="email" maxlength="80" required>
+    <input id="email" maxlength="80" name="email" type="email"><br>
 
     <label for="00N5f00000hYROt">Company</label>
-    <select id="00N5f00000hYROt" name="00N5f00000hYROt" title="Company" required>
-      <option value="">--Select Company--</option>
+    <select id="00N5f00000hYROt" name="00N5f00000hYROt">
+      <option value="">--None--</option>
       <option value="AboutTime">AboutTime</option>
       <option value="Edge">Edge</option>
       <option value="Foundation">Foundation</option>
       <option value="Harness">Harness</option>
       <option value="McCormick">McCormick</option>
       <option value="WorkMax">WorkMax</option>
-    </select>
+    </select><br>
 
     <label for="00N5f00000hYRP1">Product</label>
-    <select id="00N5f00000hYRP1" name="00N5f00000hYRP1" title="Product">
-      <option value="">--Select Product--</option>
+    <select id="00N5f00000hYRP1" name="00N5f00000hYRP1">
+      <option value="">--None--</option>
       <option value="Accounting">Accounting</option>
       <option value="Payroll">Payroll</option>
       <option value="Mobile">Mobile</option>
       <option value="Training">Training</option>
       <option value="Integrations">Integrations</option>
-    </select>
+    </select><br>
 
     <label for="00N5f00000hYRP2">SubModule</label>
-    <select id="00N5f00000hYRP2" name="00N5f00000hYRP2" title="SubModule">
-      <option value="">--Select SubModule--</option>
+    <select id="00N5f00000hYRP2" name="00N5f00000hYRP2">
+      <option value="">--None--</option>
       <option value="Login/Password">Login/Password</option>
       <option value="Billing">Billing</option>
       <option value="Installation">Installation</option>
       <option value="Reporting">Reporting</option>
-    </select>
+    </select><br>
 
     <label for="subject">Subject</label>
-    <input id="subject" name="subject" type="text" maxlength="80" required>
+    <input id="subject" maxlength="80" name="subject" type="text"><br>
 
     <label for="description">Description</label>
-    <textarea name="description" id="description" required></textarea>
+    <textarea id="description" name="description"></textarea><br>
 
     <input type="submit" name="submit" value="Submit Case">
+
   </form>
-</div>
 
 </body>
 </html>
