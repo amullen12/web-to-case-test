@@ -1,83 +1,93 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <style>
-    body {
-      font-family: sans-serif;
-      margin: 40px;
-    }
+<!-- Character Encoding -->
+<meta http-equiv="Content-type" content="text/html; charset=UTF-8">
 
-    form {
-      max-width: 600px;
-    }
+<style>
+  form {
+    max-width: 400px;
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.4;
+  }
+  label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+  }
+  input[type="text"],
+  select,
+  textarea {
+    width: 100%;
+    padding: 6px;
+    margin-top: 4px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  textarea {
+    height: 80px;
+  }
+  input[type="submit"] {
+    margin-top: 15px;
+    padding: 8px 16px;
+    border: none;
+    background-color: #0070d2;
+    color: #fff;
+    font-size: 14px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  input[type="submit"]:hover {
+    background-color: #005bb5;
+  }
+</style>
 
-    label {
-      display: inline-block;
-      width: 140px;
-      margin-top: 10px;
-      vertical-align: top;
-    }
+<form action="https://webto.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8&orgId=00D5f00000AWjUR" method="POST">
 
-    input[type="text"],
-    input[type="email"],
-    select,
-    textarea {
-      width: 300px;
-      padding: 6px;
-      margin-top: 8px;
-    }
+  <!-- Required Hidden Inputs -->
+  <input type="hidden" name="orgid" value="00D5f00000AWjUR">
+  <input type="hidden" name="retURL" value="http://">
+  <input type="hidden" name="recordType" value="0125f000000F4EHAA0">
+  <input type="hidden" name="origin" value="CONVERGE">
+  <input type="hidden" name="subject" value="CONVERGE Case Submission">
 
-    textarea {
-      height: 100px;
-      resize: vertical;
-    }
+  <!-- Visible Form Fields -->
+  <label for="name">Contact Name</label>
+  <input id="name" maxlength="80" name="name" size="20" type="text" />
 
-    input[type="submit"] {
-      margin-top: 20px;
-      padding: 8px 16px;
-    }
+  <label for="email">Email</label>
+  <input id="email" maxlength="80" name="email" size="20" type="text" />
 
-    br {
-      line-height: 2;
-    }
-  </style>
-</head>
-<body>
+  <label for="phone">Phone</label>
+  <input id="phone" maxlength="40" name="phone" size="20" type="text" />
 
-  <form action="https://foundationsoftware--05444960.sandbox.my.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8&orgId=00DU9000005Zfjl" method="POST">
+  <label for="00N5f00000hYROt">Company</label>
+  <select id="00N5f00000hYROt" name="00N5f00000hYROt" title="Company">
+    <option value="">--None--</option>
+    <option value="AboutTime">AboutTime</option>
+    <option value="Edge">Edge</option>
+    <option value="Foundation">Foundation</option>
+    <option value="Harness">Harness</option>
+    <option value="McCormick">McCormick</option>
+    <option value="WorkMax">WorkMax</option>
+  </select>
 
-    <input type="hidden" name="orgid" value="00DU9000005Zfjl">
-    <input type="hidden" name="retURL" value="http://google.com">
-    <!-- <input type="hidden" name="debug" value="1"> -->
-    <!-- <input type="hidden" name="debugEmail" value="amullen@foundationsoft.com"> -->
+  <label for="00NRi000004GiIv">Question Topic</label>
+  <select id="00NRi000004GiIv" name="00NRi000004GiIv" title="Question Topic">
+    <option value="">--None--</option>
+    <option value="Accounting/Job Costing">Accounting/Job Costing</option>
+    <option value="General Product Questions">General Product Questions</option>
+    <option value="Integrations">Integrations</option>
+    <option value="Inventory">Inventory</option>
+    <option value="Mobile Time Entry">Mobile Time Entry</option>
+    <option value="Queries/Custom Reporting">Queries/Custom Reporting</option>
+    <option value="Service Dispatch">Service Dispatch</option>
+    <option value="Speed/Connectivity">Speed/Connectivity</option>
+    <option value="Union/Prevailing Wage">Union/Prevailing Wage</option>
+  </select>
 
-    <label for="name">Contact Name</label>
-    <input id="name" maxlength="80" name="name" type="text"><br>
+  <label for="description">Description</label>
+  <textarea name="description"></textarea>
 
-    <label for="email">Email</label>
-    <input id="email" maxlength="80" name="email" type="text"><br>
-
-    <label for="00N5f00000hYROt">Company</label>
-    <select id="00N5f00000hYROt" name="00N5f00000hYROt" title="Company">
-      <option value="">--None--</option>
-      <option value="AboutTime">AboutTime</option>
-      <option value="Edge">Edge</option>
-      <option value="Foundation">Foundation</option>
-      <option value="Harness">Harness</option>
-      <option value="McCormick">McCormick</option>
-      <option value="WorkMax">WorkMax</option>
-    </select><br>
-
-    <label for="subject">Subject</label>
-    <input id="subject" maxlength="80" name="subject" type="text"><br>
-
-    <label for="description">Description</label>
-    <textarea id="description" name="description"></textarea><br>
-
-    <input type="submit" name="submit" value="Submit Case">
-
-  </form>
-
-</body>
-</html>
+  <input type="submit" name="submit" value="Submit">
+</form>
